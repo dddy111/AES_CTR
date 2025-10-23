@@ -1,0 +1,111 @@
+#==============================================================
+# Doxygen configuration for "AES-CTR Crypto API"
+#==============================================================
+
+#---------------------------------------------------------------------------
+# Project metadata
+#---------------------------------------------------------------------------
+PROJECT_NAME           = "AES-CTR Crypto API"
+PROJECT_BRIEF          = "AES Block Cipher and CTR Mode Implementation (C99)"
+PROJECT_LOGO           =
+OUTPUT_LANGUAGE        = English
+OUTPUT_DIRECTORY       = docs_out
+CREATE_SUBDIRS         = NO
+OPTIMIZE_OUTPUT_FOR_C  = YES
+# PROJECT_NUMBER       = 1.0.0
+
+#---------------------------------------------------------------------------
+# Inputs
+#---------------------------------------------------------------------------
+# 프로젝트 루트를 기준으로 재귀적으로 모두 스캔합니다.
+# (예: aes.h, aes_ctr.h, ctr_mode.h, crypto_common.h, *.c 등)
+INPUT                  = .
+RECURSIVE              = YES
+FILE_PATTERNS          = *.h *.c
+
+# 내부 구현(예: internal/ 디렉터리)은 문서에서 제외
+EXCLUDE_PATTERNS       = */internal/* */.git/*
+
+# 필요 시 특정 파일/폴더를 추가 제외하고 싶으면 여기에 더 적으세요
+# EXCLUDE               = path/to/generated/*
+
+#---------------------------------------------------------------------------
+# Extraction / Formatting
+#---------------------------------------------------------------------------
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = NO
+FULL_PATH_NAMES        = NO
+STRIP_FROM_PATH        = .
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+REFERENCES_RELATION    = YES
+REFERENCES_LINK_SOURCE = YES
+TAB_SIZE               = 4
+SORT_MEMBER_DOCS       = YES
+SORT_BRIEF_DOCS        = YES
+JAVADOC_AUTOBRIEF      = YES
+
+#---------------------------------------------------------------------------
+# HTML output
+#---------------------------------------------------------------------------
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_TIMESTAMP         = YES
+GENERATE_TREEVIEW      = YES
+TREEVIEW_WIDTH         = 250
+SEARCHENGINE           = YES
+ALPHABETICAL_INDEX     = YES
+
+#---------------------------------------------------------------------------
+# LaTeX / PDF output
+#---------------------------------------------------------------------------
+GENERATE_LATEX         = YES
+LATEX_OUTPUT           = latex
+PDF_HYPERLINKS         = YES
+USE_PDFLATEX           = YES
+GENERATE_PDF           = YES
+LATEX_CMD_NAME         = pdflatex
+MAKEINDEX_CMD_NAME     = makeindex
+COMPACT_LATEX          = YES
+LATEX_BATCHMODE        = YES
+PAPER_TYPE             = a4
+LATEX_SOURCE_CODE      = YES
+
+#---------------------------------------------------------------------------
+# Warnings and messages
+#---------------------------------------------------------------------------
+WARN_IF_UNDOCUMENTED   = YES
+WARN_NO_PARAMDOC       = YES
+QUIET                  = NO
+WARN_LOGFILE           = doxy_warn.log
+
+#---------------------------------------------------------------------------
+# Graph options (requires Graphviz)
+#---------------------------------------------------------------------------
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 4
+DOT_TRANSPARENT        = YES
+DOT_IMAGE_FORMAT       = svg
+DOT_GRAPH_MAX_NODES    = 50
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+CLASS_DIAGRAMS         = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+GRAPHICAL_HIERARCHY    = YES
+
+#---------------------------------------------------------------------------
+# Preprocessing
+#---------------------------------------------------------------------------
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+# 라이브러리 가시성 매크로 등을 빈 토큰으로 처리
+PREDEFINED             = AES_API=
+
+#---------------------------------------------------------------------------
+# Tags
+#---------------------------------------------------------------------------
+GENERATE_TAGFILE       = aes_lib.tag
